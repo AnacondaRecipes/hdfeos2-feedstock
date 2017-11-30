@@ -1,26 +1,29 @@
 {% set version = "2.19.1" %}
+{% set minor_ver = '.'.join(version.split('.')[:2]) %}
 
 package:
   name: hdfeos2
   version: {{ version }}
 
 source:
-  url: ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS2.19v1.00.tar.Z
+  url: ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS{{ minor_ver }}v1.00.tar.Z
   sha256: 3fffa081466e85d2b9436d984bc44fe97bbb33ad9d8b7055a322095dc4672e31
 
 build:
-  number: 8
+  number: 9
   skip: True  # [win]
+  run_exports:
+    # no info.  Leaving at minor.
+    - {{ pin_subpackage('hdfeos2', max_pin='x.x') }}
 
 requirements:
   build:
-    - hdf4 4.2.*
-    - zlib 1.2.11
-    - jpeg 9*
-  run:
-    - hdf4 4.2.*
-    - zlib 1.2.11
-    - jpeg 9*
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - hdf4
+    - zlib
+    - jpeg
 
 test:
   commands:
