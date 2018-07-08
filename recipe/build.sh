@@ -1,5 +1,6 @@
 #!/bin/sh
 
+chmod -R +w .
 autoreconf -vfi
 ./configure --prefix=${PREFIX} \
             --build=${BUILD} \

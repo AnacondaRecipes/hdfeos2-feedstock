@@ -1,4 +1,4 @@
-{% set version = "2.19.1" %}
+{% set version = "2.20" %}
 {% set minor_ver = '.'.join(version.split('.')[:2]) %}
 
 package:
@@ -7,15 +7,15 @@ package:
 
 source:
   - url: ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS{{ minor_ver }}v1.00.tar.Z
-    sha256: 3fffa081466e85d2b9436d984bc44fe97bbb33ad9d8b7055a322095dc4672e31
+    sha256: cb0f900d2732ab01e51284d6c9e90d0e852d61bba9bce3b43af0430ab5414903
     patches:
       # https://lists.gnu.org/archive/html/guix-devel/2016-09/msg02110.html
       - 0001-fix-automake-files-for-linux-compatibility.patch
   - url: ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS{{ minor_ver }}v1.00_TestDriver.tar.Z
-    sha256: 170c1b515d67897a739779de22c0f046e0ee927f9b7567445e68861a018b7c2d
+    sha256: 21bdbcd977c11b5a1779a82aebc0338b4adbc94107329e2c917a274924c20c5a
 
 build:
-  number: 9
+  number: 0
   skip: True  # [win]
   # static libs.  No run_exports.
   # run_exports:
