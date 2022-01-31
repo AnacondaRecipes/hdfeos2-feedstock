@@ -29,7 +29,9 @@ requirements:
     - autoconf
     - automake
     - libtool
-  host:
+    - patch       # [not win]
+    - m2-patch    # [win]
+   host:
     - hdf4
     - zlib
     - jpeg
