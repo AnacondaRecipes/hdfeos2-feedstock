@@ -31,7 +31,7 @@ requirements:
     - libtool
     - patch       # [not win]
     - m2-patch    # [win]
-   host:
+  host:
     - hdf4
     - zlib
     - jpeg
