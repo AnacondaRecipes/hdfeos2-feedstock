@@ -1,6 +1,8 @@
 #!/bin/sh
 
 chmod -R +w .
+export CFLAGS="${CFLAGS} -Wno-implicit-function-declaration -Wno-implicit-int -Wno-deprecated-non-prototype"
+
 autoreconf -vfi
 ./configure --prefix=${PREFIX} \
             --build=${BUILD} \
