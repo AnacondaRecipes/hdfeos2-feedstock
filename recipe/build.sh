@@ -4,7 +4,7 @@ chmod -R +w .
 if [[ "$target_platform" == osx-* ]]; then
     export CFLAGS="${CFLAGS} -Wno-implicit-function-declaration -Wno-implicit-int -Wno-deprecated-non-prototype"
 else
-    export CFLAGS="${CFLAGS} -Wno-implicit-function-declaration -Wno-implicit-int"
+    export CFLAGS="${CFLAGS} -Wno-implicit-function-declaration -Wno-implicit-int -Wno-incompatible-pointer-types"
 fi
 autoreconf -vfi
 ./configure --prefix=${PREFIX} \
