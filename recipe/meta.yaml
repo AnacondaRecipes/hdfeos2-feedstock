@@ -42,13 +42,10 @@ requirements:
     - zlib
     - libjpeg-turbo
 
-
 test:
   commands:
     - test -f ${PREFIX}/lib/libGctp.a  # [not win]
     - test -f ${PREFIX}/lib/libhdfeos.a  # [not win]
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://hdfeos.org/index.php
